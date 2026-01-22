@@ -184,7 +184,9 @@ x = int(input("enter number"))
 if(x % 7 == 0):
     print("Multiple of 7")
 else:
-    print("Not A multiple")
+    print("Not A multiple of seven")
+
+    # test
 
 
 
