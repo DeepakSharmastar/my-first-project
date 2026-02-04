@@ -101,28 +101,81 @@
 # create a student class that name & marks of 3 subjects as arguments in constructor.
 # then create a method to print the avg 
 
-class Student():
+# class Student():
 
-    def __init__(self, name ,marks):
-        self.marks = marks
-        self.name = name
+#     def __init__(self, name ,marks):
+#         self.marks = marks
+#         self.name = name
+#     @staticmethod  # static method use for use function without self arguments (decorator)
+#     def hello():  # with out self argument this function return error
+#         print("hello")
 
-    def avg(self):
-        sum = 0
-        for val in self.marks:
-            sum += val
-        print("hi", self.name, "your avg score is : " , sum/3)
+#     def avg(self):
+#         sum = 0
+#         for val in self.marks:
+#             sum += val
+#         print("hi", self.name, "your avg score is : " , sum/3)
         
 
-s1 = Student("deepak",[20,30,40])
-s1.avg()
+# s1 = Student("deepak",[20,30,40])
+# s1.avg()
 
-# we want change name in future 
-s1.name = "sharma"
-s1.avg()
+# # we want change name in future 
+# s1.name = "sharma"
+# s1.avg()
+# s1.hello()
+
 # s2 = Student(98)
 # s3= Student(40)
 
 
-        
+# important concept 
+# abstraction  (hiding implementation details of  a class)
+# encapsulation  (wraping data)
+# inheritence 
+# polymorophism
+# 1. 
+# class Car:
+#     def __init__(self):
+#         self.acc = False
+#         self.brk = False
+#         self.clutch = False
+#     def start(self):
+#         self.clutch = True
+#         self.acc = True
+#         print("car started...")
+# car1 = Car()
+# car1.start()
+
+# create account class with 2 attributes - balance & account no
+# create method for debit , credit & printing the balance 
+
+class Accouunt:
+    def __init__(self,bal,acc):
+        self.balance = bal
+        self.account_no = acc
+
+    # debit method
+    def debit(self, amout):
+        self.balance -= amout
+        print("Rs" , amout, "was debited")
+        print("total balance = " , self.get_balance())
+
+    # credit method 
+    def credit(self,amount):
+        self.balance += amount
+        print("Rs" , amount, "was credit")
+        print("total balance = " , self.get_balance())
+    # final balance
+    def get_balance(self):
+        return self.balance
+
+
+acc1 = Accouunt(10000, 123456)
+acc1.debit(1000)
+acc1.credit(5000)
+
+# print(acc1.balance)
+# print(acc1.account_no)
+
 
